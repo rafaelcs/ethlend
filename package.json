@@ -1,0 +1,21 @@
+{
+  "name": "ethlend",
+  "version": "1.0.0",
+  "description": "automation test to ethlend app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webdriver-update": "node node_modules/protractor/bin/webdriver-manager update",
+    "tests": "node node_modules/protractor/bin/protractor conf.js"
+  },
+  "author": "Rafael Carvalho",
+  "license": "ISC",
+   "devDependencies": {
+    "protractor": "^5.2.0",
+    "protractor-screenshoter-plugin": "^0.5.0",
+    "jasmine-spec-reporter": "^3.2.0",
+    "protractor-jasmine2-html-reporter": "~0.0.7",
+    "casual": "^1.5.11",
+    "chai": "^3.5.0"
+  }
+}
