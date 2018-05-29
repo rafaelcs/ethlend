@@ -15,5 +15,8 @@ jobs:
       - run:
           name: Update Selenium drivers
           command: npm run webdriver-update
+      - run:
+          name: Run UI tests
+          command: npm run tests
 
 
