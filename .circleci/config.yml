@@ -10,6 +10,6 @@ jobs:
     steps:
       - run:
           name: Install dependencies
-          command: 'npm install'
+          command: npm install
 
 
