@@ -4,6 +4,10 @@ const MetamaskData = {
 
 	newPassword : {
 		passwordValue: casual.password
+	},
+
+	existingPassword : {
+		passwordValue: 'ethlend123'
 	}
 };
 
