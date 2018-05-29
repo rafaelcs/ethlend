@@ -1,6 +1,7 @@
 {
   "name": "ethlend",
   "version": "1.0.0",
+  "private": true,
   "description": "automation test to ethlend app",
   "main": "index.js",
   "scripts": {
