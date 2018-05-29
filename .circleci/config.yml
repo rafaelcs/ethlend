@@ -8,6 +8,7 @@ jobs:
         - ~/ethlend
 
     steps:
+      - checkout
       - run:
           name: Install dependencies
           command: npm install
