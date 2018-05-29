@@ -10,7 +10,7 @@
   },
   "author": "Rafael Carvalho",
   "license": "ISC",
-   "devDependencies": {
+  "devDependencies": {
     "protractor": "^5.2.0",
     "protractor-screenshoter-plugin": "^0.5.0",
     "jasmine-spec-reporter": "^3.2.0",
