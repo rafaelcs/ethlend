@@ -32,6 +32,10 @@ describe('Create a loan request  >', function() {
 		basePage.isVisible(metamaskPage.vaulCreatedTextBox), basePage.timeout.xxl;
 	});
 
+	it('should copy words to somewhere safe', function() {
+		metamaskPage.copyWordsButton.click();
+	});
+
 	it('should open ethland app and accept terms', function() {
 		basePage.switchToTab('1');
 		basePage.visit(browser.params.ethlendApp);
@@ -47,5 +51,10 @@ describe('Create a loan request  >', function() {
 		ethlendPage.selectDropdownOption(ethlendPage.loanCurrencyDropdown, loanCurrencyData.currency.loanValue);
 		ethlendPage.selectDropdownOption(ethlendPage.collateralDropdown, loanCurrencyData.currency.collateralValue);
 		ethlendPage.createButton.click();
+	});
+
+	it('should logout from metamask', function() {
+		basePage.switchToTab('0');
+		metamaskPage.logOut();
 	});
 });
