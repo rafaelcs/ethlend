@@ -3,11 +3,11 @@ let casual = require('casual');
 const MetamaskData = { 
 
 	newPassword : {
-		passwordValue: casual.password
+		passwordValue: 'ethlend123'
 	},
 
-	existingPassword : {
-		passwordValue: 'ethlend123'
+	secretPhrase : {
+		phraseValue: 'sign skull design denial topple dragon angle fox stock rally salt unique'
 	}
 };
 
