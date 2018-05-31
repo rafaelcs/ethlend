@@ -16,3 +16,9 @@ This project is an example of how to create loan requests in ETHLend app
 
 ## Run tests:
 * `npm run tests` to run tests using Chrome browser with MetaMask.
+
+## Followed approach:
+
+* The approach followed here was to create a password to create a new account. From this new created account, the secret phrase and the hexadecimal number of the account were stored.
+
+* The difficulty encountered in this approach was to maintain the same hexadecimal number for each test performed and each new install of the metamask extension, so this issue was solved by creating an account, saving the hexadecimal number in an object and using it whenever the test is performed , opening the browser and installing the extension from scratch. In this way, we can always retrieve the account using the stored secret phrase, with all received ETHs
