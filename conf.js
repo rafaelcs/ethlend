@@ -13,7 +13,7 @@ exports.config = {
 	onPrepare: function(){
 		browser.manage().timeouts().implicitlyWait(5000);
 		browser.ignoreSynchronization = true;
-		browser.manage().window().setSize(1600, 1000);
+		browser.manage().window().setSize(1250, 1000);
 
 		jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
 			savePath: 'Report_HTML/'

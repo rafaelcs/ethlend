@@ -30,13 +30,23 @@ const BasePage = function () {
 	};
 
 	this.timeout = {
-		'xxl': 15000
+		'xxl': 20000
 	};
 
 	this.switchToTab = function (tabIndex) {
 		browser.getAllWindowHandles().then(function (handles) {
 			browser.switchTo().window(handles[tabIndex]);
 		});
+	};
+
+	this.selectDropdownOption = function(dropdownElem, optionsListElem, optionObj) {
+		dropdownElem.click();
+		browser.sleep(1000);
+		optionsListElem.filter(function(elem, index) {
+			return elem.getText().then(function(text) {
+				return text === optionObj;
+			});
+		}).first().click();
 	};
 };
 

@@ -5,6 +5,10 @@ const LoanCurrencyData = {
 	currency : {
 		loanValue: 'Ethereum (ETH)',
 		collateralValue: 'LEND'
+	},
+
+	loan : {
+		loanAmountValue: '10'
 	}
 };
 

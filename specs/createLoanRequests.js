@@ -27,13 +27,15 @@ describe('Create a loan request  >', function() {
 		basePage.isVisible(metamaskPage.newPasswordField), basePage.timeout.xxl;
 	});
 
-	it('should create a new password', function() {
-		metamaskPage.fillPasswordForm(metamaskData.newPassword);
-		basePage.isVisible(metamaskPage.vaulCreatedTextBox), basePage.timeout.xxl;
+	it('should import an existing DEN', function() {
+		metamaskPage.importExistingDenButton.click();
+		basePage.isVisible(metamaskPage.secretPhraseTextarea), basePage.timeout.xxl;
 	});
 
-	it('should copy words to somewhere safe', function() {
-		metamaskPage.copyWordsButton.click();
+	it('should restore account with secret phrase and set new password', function() {
+		metamaskPage.secretPhraseTextarea.sendKeys(metamaskData.secretPhrase.phraseValue);
+		metamaskPage.fillPasswordForm(metamaskData.newPassword);
+		basePage.selectDropdownOption(metamaskPage.networkMenu, metamaskPage.networkList, metamaskData.networkMenu.networkValue);
 	});
 
 	it('should open ethland app and accept terms', function() {
@@ -48,13 +50,22 @@ describe('Create a loan request  >', function() {
 	});
 
 	it('should select \'Ethereum (ETH)\' and \'LEND\' options', function() {
-		ethlendPage.selectDropdownOption(ethlendPage.loanCurrencyDropdown, loanCurrencyData.currency.loanValue);
-		ethlendPage.selectDropdownOption(ethlendPage.collateralDropdown, loanCurrencyData.currency.collateralValue);
+		basePage.selectDropdownOption(ethlendPage.loanCurrencyDropdown, ethlendPage.loanCurrencyDropdownOptions, loanCurrencyData.currency.loanValue);
+		basePage.selectDropdownOption(ethlendPage.collateralDropdown, ethlendPage.loanCurrencyDropdownOptions, loanCurrencyData.currency.collateralValue);
 		ethlendPage.createButton.click();
 	});
 
-	it('should logout from metamask', function() {
+	it('should confirm transaction in metamask', function() {
 		basePage.switchToTab('0');
-		metamaskPage.logOut();
+		metamaskPage.transactionOption.click();
+		metamaskPage.submitButton.click();
+		basePage.isVisible(metamaskPage.copyIcon), basePage.timeout.xxl;
+	});
+
+	it('should set collateral amount in loan terms', function() {
+		basePage.switchToTab('1');
+		basePage.isVisible(ethlendPage.loanAmount), basePage.timeout.xxl;
+		ethlendPage.loanAmount.sendKeys(loanCurrencyData.loan.loanAmountValue);
+		basePage.isVisible(ethlendPage.amountSlider), basePage.timeout.xxl;
 	});
 });
