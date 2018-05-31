@@ -66,6 +66,13 @@ describe('Create a loan request  >', function() {
 		basePage.switchToTab('1');
 		basePage.isVisible(ethlendPage.loanAmount), basePage.timeout.xxl;
 		ethlendPage.loanAmount.sendKeys(loanCurrencyData.loan.loanAmountValue);
-		basePage.isVisible(ethlendPage.amountSlider), basePage.timeout.xxl;
+		basePage.isVisible(ethlendPage.monthlyInterestLabel), basePage.timeout.xxl;
+	});
+
+	it('should move slider to amount ETH, monthly interest and set data', function() {
+		basePage.moveSlider(ethlendPage.amount);
+		basePage.moveSlider(ethlendPage.monthlyInterestLabel);
+		basePage.isVisible(ethlendPage.setDataButton), basePage.timeout.xxl;
+		ethlendPage.setDataButton.click();
 	});
 });

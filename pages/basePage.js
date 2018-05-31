@@ -29,6 +29,10 @@ const BasePage = function () {
 		browser.executeScript('arguments[0].scrollIntoView();', locator.getWebElement());
 	};
 
+	this.moveSlider = function (locator) {
+		browser.actions().dragAndDrop(locator,{x:100, y:0}).perform();
+	};
+
 	this.timeout = {
 		'xxl': 20000
 	};

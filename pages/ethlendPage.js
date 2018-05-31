@@ -17,7 +17,9 @@ const EthlendPage = function () {
 	//SET LOAN TERMS locators
 
 	this.loanAmount = element(by.css('input[type="number"]'));
-	this.amountSlider = element.all(by.className('rangeslider__handle')).first();
+	this.amount = element.all(by.css('.rangeslider__fill')).get(0);
+	this.monthlyInterestLabel = element.all(by.css('.rangeslider__fill')).get(1);
+	this.setDataButton = element(by.css('.setdata-btn'));
 
 	this.acceptTerms = function(passwordObj) {
 		this.termsCheckbox.click();
